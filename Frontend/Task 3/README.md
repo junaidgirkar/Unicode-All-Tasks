@@ -8,4 +8,4 @@
 
 ### The Navbar consists of Links to charts made from the data recived from the API using chart.js
 
-### There are 4 charts : Active Cases, Critical Cases, Recovered Cases and Death Cases
+### There are 4 charts : Active Cases, Critical Cases, Recovered Cases and Death Cases. All made using chart.js
