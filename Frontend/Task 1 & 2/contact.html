@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+        <title>About Me</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="javascript.js"></script>
+
+      </head>
+
+    <body style="margin-height:500px" >
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">Portfolio</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="courses.html">Courses Done</a></li>
+                <li><a href="social.html">Social Media Profiles</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+              </ul>
+
+            </div>
+          </nav>
+
+
+
+
+          <h1 style="text-align: center"> REGISTRATION FORM </h1>
+
+      <form name="RegForm" onsubmit="return validation()" >
+
+    <label class="form_field">Full Name : </label><input id="name_field" type="text" size=65% name="Name" placeholder="Enter your Name here"> </p><br>
+    <label class="form_field"> Address Line 1 : </label><input id="address_field" type="text" size=65% name="Address1" placeholder="Enter your Address here">  </p><br>
+
+    <label class="form_field"> Address Line 2 :</label><input id="address_field" type="text" size=65% name="Address2" placeholder="Optional">  </p><br>
+    <label class="form_field">Pin Code : </label><input id="pincode_field" type="number" pattern="[0-9]{6}" placeholder="6 Digit Pin Code" size=65% name="Pincode"> </p><br>
+    <label class="form_field">E-mail Address : </label><input id="email_field" type="email" size=65% name="EMail" placeholder="xyz@example.com">  </p><br>
+
+    <label class="form_field">Mobile Number : </label><input id="phone_field" type="number" pattern="[0-9]{10}" placeholder="10 Digit Phone Number" size=65% name="Mobile_num"> </p><br>
+
+    <label class="form_field">SELECT YOUR CITY :</label>
+        <select type="text" value="" name="City">
+           <option>Select</option>
+            <option>Mumbai</option>
+            <option>Delhi</option>
+            <option>Chenna</option>
+            <option>Bengaluru</option>
+            <option>Others</option>
+        </select></p><br><br>
+    <label class="form_field">Queries :  </label><textarea id="query_field" cols="55" name="Queries">  </textarea></p>
+    <p align = 'center' ><button type="submit" onclick="Submit" class="btn btn-success">Submit</button>
+        <button type="reset" class="btn btn-danger">Reset</button>
+    </p>
+</form>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="..\\..\\static\\myapp\\main.css" type="text/css" />
+<link
+  rel="stylesheet"
+  href="C:\Users\junai\Desktop\Backend3\myapp\static\myapp\main.css"
+  type="text/css"
+/>
+<style>
+  body {
+    background-color: antiquewhite;
+  }
+  #dict_form {
+    position: center;
+    margin: 20px;
+    border: 4px solid black;
+    min-height: 60px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    width: auto;
+  }
+</style>
+{% endblock %} {% block body %}
+<div class="container" align="center">
+  <form class="" action="{% url 'home' %}" method="post">
+    {% csrf_token %}
+    <br />
+    <br />
+    <label for=""><strong>Smaller Number</strong></label>
+    <input
+      type="number"
+      required
+      placeholder="smaller number"
+      min="0"
+      name="smaller_number"
+      value="{{"
+      small
+      }}
+    />
+    <br />
+    <br />
+    <label for=""><strong>Larger Number</strong></label>
+    <input
+      type="number"
+      required
+      placeholder="larger number "
+      min="1"
+      name="larger_number"
+      value="{{"
+      large
+      }}
+    />
+    <br />
+    <br />
+    <input
+      type="submit"
+      class="btn btn-success"
+      name="submit"
+      value="SUBMIT"
+      align="center"
+    />
+  </form>
+
+  <div id="dict_form">
+    {{ json_string }}
+  </div>
+</div>
+
+{% endblock %}

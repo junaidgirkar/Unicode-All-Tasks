@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html class="chart1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+
+<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+<h2 align="center">Death CASES </h2>
+<p align = "center">Click twice on the color box </p>
+<script>
+
+
+
+//fetching data from api
+fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "corona-virus-world-and-india-data.p.rapidapi.com",
+            "x-rapidapi-key": "07d847dae8mshb1a6e2a7497da3ap1350c5jsn7b8614230a53"
+        }
+    })
+    .then(response => response.json().then(data => {
+        //console.log(data);
+        let countries_stat = data.countries_stat;
+        
+        for (let i = 0; i < 20/*countries_stat.length*/; i++) {
+            //console.log(countries_stat[i]);
+            const name = countries_stat[i].country_name;
+            const cases = countries_stat[i].deaths;
+            xlabels.push(name);
+            
+            ylabels.push(parseInt(cases.replace(/,/g,''))/1000);
+            console.log(name, cases);
+
+
+
+        }
+    })).catch(err => {
+        console.log(err);
+    });
+
+</script>
+
+
+
+
+<canvas id="myChart" ></canvas>
+<script>
+const xlabels = [];
+const ylabels = [];
+const ctx = document.getElementById('myChart').getContext('2d');
+
+const myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: xlabels,
+        datasets: [{
+            label: 'No of Active cases / 1000',
+            data: ylabels,
+            backgroundColor: 
+                'rgba(204,0,0,0.8)' ,
+            borderColor: 
+                'rgba(0, 0, 0, 1)',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                ticks: {
+                    beginAtZero: false,
+                    callback: function(value, index, values) {
+                        return value + "k";}
+                    
+                    
+                }
+            }]
+        }
+    }
+});
+</script>
+</html>

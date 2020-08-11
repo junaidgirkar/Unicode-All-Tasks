@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="../../static/main2.css">
+{% endblock %}
+
+{% block body %}
+    <br><br><br>
+
+    <form class="" action="{% url 'top3' %}" method="post" align='center'>
+  {% csrf_token %}
+        <br><br><br>
+  <input type="submit" class="btn btn-dark" name="submit" value="Display Top3" align'center>
+        <br><br>
+</form>
+
+    <div  align="center">
+
+    <table class="top3_table">
+        <tr id="top3_table_header">
+            <th>SOL</th>
+            <th>Earth Date </th>
+            <th>Count</th>
+        </tr>
+        <tr>
+            <td>{{ sol1 }}</td>
+            <td>{{ date1 }}</td>
+            <td>{{ count1 }}</td>
+
+        </tr>
+        <tr>
+            <td>{{ sol2 }}</td>
+            <td>{{ date2 }}</td>
+            <td>{{ count2 }}</td>
+        </tr>
+        <tr>
+            <td>{{ sol3 }}</td>
+            <td>{{ date3 }}</td>
+            <td>{{ count3 }}</td>
+        </tr>
+
+    </table>
+
+    </div>
+{% endblock %}

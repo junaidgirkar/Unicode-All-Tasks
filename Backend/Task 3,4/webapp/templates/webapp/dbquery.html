@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block head %}
+
+    <link rel="stylesheet" href="../../static/main.css">
+{% endblock %}
+
+{% block body %}
+    <br><br><br>
+<form class="" action="{% url 'dbquery' %}" method="post" align='center'>
+  {% csrf_token %}
+  <br>
+  <br>
+    <label font-height="100" ><strong>Enter Query SOL</strong> </label>
+
+  <input id="query_sol" type="number"  placeholder="Sol" name="query_sol" value="590"  min="590" >
+<p>Currently available: 590 - 596 (As on 1st August 2020)</p>
+  <input type="submit" class="btn btn-success" name="submit" value="SUBMIT" align='center'>
+
+</form>
+
+    <div class="container" align="center">
+    <h2>ID: {{ id }}</h2>
+    <h2>Sol number: {{ sol_no }}</h2>
+    <h2>Count: {{ count }}</h2>
+    <h2>Sol Date: {{ sol_date }}</h2>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="../../static/main.css">
+    <title>Pic of day</title>
+{%  endblock %}
+{% block body %}
+
+
+    <form class="" action="{% url 'picture' %}" method="post" align='center'>
+  {% csrf_token %}
+        <br><br><br>
+  <input type="submit" class="btn btn-dark" name="submit" value="Display Image" align'center>
+        <br><br>
+</form>
+    <div align="center">
+    <h3>Astronomy Picture of the day</h3>
+        <h4>{{ date }}</h4>
+        <h4>Shot by: {{ photographer }}</h4>
+        <h4><strong>Title : {{ title }}</strong></h4>
+        <h4>Received from NASA APOD API</h4>
+    <img src="{{ hdurl }}"  width=50% alt="Click on the button to display the image/ Video received instead of expected Image ">
+        <br><br><br>
+    </div>
+{% endblock %}

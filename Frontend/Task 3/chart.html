@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html class="chart1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+
+<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+
+<script>
+
+
+
+//fetching data from api
+fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "corona-virus-world-and-india-data.p.rapidapi.com",
+            "x-rapidapi-key": "07d847dae8mshb1a6e2a7497da3ap1350c5jsn7b8614230a53"
+        }
+    })
+    .then(response => response.json().then(data => {
+        //console.log(data);
+        let countries_stat = data.countries_stat;
+        
+        for (let i = 0; i < countries_stat.length; i++) {
+            //console.log(countries_stat[i]);
+            const name = countries_stat[i].country_name;
+            const cases = countries_stat[i].cases;
+            xlabels.push(name);
+            
+            ylabels.push(parseInt(cases.replace(/,/g,''))/1000);
+            console.log(name, cases);
+
+
+
+        }
+    })).catch(err => {
+        console.log(err);
+    });
+
+</script>
+
+
+
+
+<canvas id="myChart" ></canvas>
+<script>
+const xlabels = [];
+const ylabels = [];
+const ctx = document.getElementById('myChart').getContext('2d');
+
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: xlabels,
+        datasets: [{
+            label: 'No of cases',
+            data: ylabels,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                /*'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'*/
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: false,
+                    callback: function(value, index, values) {
+                        return value + "k";}
+                    
+                    
+                }
+            }]
+        }
+    }
+});
+</script>
+</html>

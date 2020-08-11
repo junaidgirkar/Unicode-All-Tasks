@@ -1,0 +1,99 @@
+body{
+  background-color: rgb(168, 215, 233);
+  border: 8px solid black;
+  min-height: 100%;
+  padding-bottom: 35px;
+  font-family: cursive;
+  font-size: 22px;
+  margin: 8px;
+  padding: 8px;
+}
+
+.home_info{
+  margin-right: 43%;
+
+}
+
+#first_image{
+  margin-top: 50px;
+  border: 3px solid black;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+
+}
+
+
+
+.about-border{
+  border: 8px solid black;
+  text-align: center;
+  padding: 8px;
+  margin: 8px;
+}
+
+.about-content{
+  padding: 60px;
+}
+
+.gmail-contact img{
+  align: right;
+}
+
+.icon-logo{
+
+  margin-left: 48%;
+}
+
+.course-name{
+  margin-left: 4%;
+}
+
+
+
+
+#name_field{
+    width: 71%;
+    margin: 20px;
+}
+
+#address_field{
+  width: 65%;
+  margin: 20px;
+}
+
+#pincode_field{
+  width: 30%;
+  margin: 20px;
+}
+
+#email_field{
+  width: 65%;
+  margin: 20px;
+}
+
+#phone_field{
+   width: 35%;
+   margin: 20px;
+ }
+
+#query_field{width: 50%;
+margin-left: 20px;}
+
+
+GEEKFORGEEKS {
+    margin-left: 70px;
+    font-weight: bold ;
+    float: left;
+    clear: left;
+    width: 100px;
+    text-align: left;
+    margin-right: 10px;
+    font-family:sans-serif,bold, Arial, Helvetica;
+    font-size:14px;
+}
+
+
+form {
+    margin: 0 auto;
+    width: 59%;
+}</style>

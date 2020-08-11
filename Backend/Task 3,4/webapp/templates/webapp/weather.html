@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="../../static/main.css">
+    <title>Weather</title>
+{% endblock %}
+<body>
+{% block body %}
+    <a href="picture/">PICTURE.html</a>
+    <style>
+
+</style>
+<form class="" action="{% url 'home' %}" method="post" align='center'>
+  {% csrf_token %}
+  <br>
+  <br>
+    <label font-height="100" ><strong>Enter SOL</strong> </label>
+
+  <input id="sol_no" type="number"  placeholder="Sol" name="sol_number" value="590"  min="590">
+
+  <input type="submit" class="btn btn-success" name="submit" value="SUBMIT" align'center>
+<p>Currently available: 590 - 598 (As on 1st August 2020)</p>
+</form>
+
+<h2 align="center">SOL Number: {{sol_no}}</h2>
+<h3 align="center">{{utc_date}}</h3>
+<h3 align="center">Season: {{season}}</h3>
+<br>
+    <div class="container">
+<div id="leftbox" width="180" >
+    <h3><strong>AIR TEMPERTURE</strong></h3>
+    <br>
+  <h4>Average: {{air_temp_avg}} °C</h4>
+    <h4>Minimum: {{air_temp_min}} °C</h4>
+  <h4>Maximum: {{air_temp_max}} °C</h4>
+
+
+</div>
+
+<div id="middlebox" width="180">
+    <h3><strong>AIR PRESSURE</strong></h3>
+    <br>
+  <h4>Average: {{pressure_avg}} Pa</h4>
+    <h4>Minimum: {{pressure_min}} Pa</h4>
+  <h4>Maximum: {{pressure_max}} Pa</h4>
+
+
+</div>
+
+<div id="rightbox" width="180">
+
+    <h3><strong>HORIZONTAL WINDS</strong></h3>
+    <br>
+  <h4>Avg Wind Speed: {{avg_wind_speed}} m/s</h4>
+  <h4>Wind Direction: {{wind_common_direction}} </h4>
+  <h4>Compass Angle: {{wind_common_degree}}° </h4>
+
+
+</div>
+    </div>
+
+
+{% endblock %}
+</body>
